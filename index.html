@@ -28,23 +28,25 @@
             display: block;
         }
 
- /* ZEP School 로고 버튼 (상단) */
-.logo-button-overlay {
-    position: absolute;
-    top: calc(21.8% - 8px); /* 기존 21.8% 위치에서 8px 위로 조정 */
-    left: 18.2%;
-    width: 11%;
-    height: 2.3%;
-    z-index: 10;
-}
+        /* ZEP School 로고 버튼 (상단) */
+        .logo-button-overlay {
+            position: absolute;
+            top: 21.8%;
+            left: 18.2%;
+            width: 11%;
+            height: auto;
+            aspect-ratio: 450 / 100;
+            z-index: 10;
+        }
 
         /* 젭 스쿨 카드 버튼 (좌측 상단) */
         .card-button-overlay {
             position: absolute;
-            top: calc(29.5% + 20px);
+            top: 30.2%;
             left: 4.5%;
-            width: 170px;
-            height: 230px;
+            width: 21.5%;
+            height: auto;
+            aspect-ratio: 170 / 230;
             z-index: 10;
         }
 
@@ -88,27 +90,28 @@
             transform: scale(0.98);
         }
 
-        /* 반응형 디자인 */
+        /* 모바일 최적화 */
         @media (max-width: 768px) {
-            .card-button-overlay {
-                width: 130px;
-                height: 180px;
-                top: calc(29.5% + 10px);
-                left: 4%;
-            }
-            
+            /* 버튼 위치는 퍼센트로 유지되므로 자동으로 조정됨 */
             .logo-button-overlay {
                 width: 11%;
-                height: 2.3%;
+                aspect-ratio: 450 / 100;
+            }
+            
+            .card-button-overlay {
+                width: 21.5%;
+                aspect-ratio: 170 / 230;
             }
         }
 
         @media (max-width: 480px) {
+            /* 작은 화면에서도 비율 유지 */
+            .logo-button-overlay {
+                width: 11%;
+            }
+            
             .card-button-overlay {
-                width: 110px;
-                height: 150px;
-                top: calc(29.5% + 10px);
-                left: 3%;
+                width: 21.5%;
             }
         }
     </style>
@@ -125,7 +128,7 @@
             </button>
         </div>
         
-        <!-- 젭 스쿨 카드 버튼 (중앙) -->
+        <!-- 젭 스쿨 카드 버튼 -->
         <div class="card-button-overlay">
             <button class="zep-button" onclick="goToZep()" aria-label="ZEP 스쿨로 이동">
                 <img src="12www.png" alt="ZEP 스쿨">
