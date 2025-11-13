@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEP 스쿨 - 영어 3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .background-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ZEP School 로고 버튼 (상단) */
+        .logo-button-overlay {
+            position: absolute;
+            top: 21.8%;
+            left: 18.2%;
+            width: 11%;
+            height: 2.3%;
+            z-index: 10;
+        }
+
+        /* 젭 스쿨 카드 버튼 (좌측 상단) */
+        .card-button-overlay {
+            position: absolute;
+            top: calc(29.5% + 10px);
+            left: 4.5%;
+            width: 170px;
+            height: 230px;
+            z-index: 10;
+        }
+
+        .zep-button {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.3s ease, filter 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zep-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-button-overlay .zep-button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .card-button-overlay .zep-button img {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+        }
+
+        .card-button-overlay .zep-button:hover {
+            transform: scale(1.05);
+        }
+
+        .card-button-overlay .zep-button:hover img {
+            filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.15));
+        }
+
+        .zep-button:active {
+            transform: scale(0.98);
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .card-button-overlay {
+                width: 130px;
+                height: 180px;
+                top: calc(29.5% + 10px);
+                left: 4%;
+            }
+            
+            .logo-button-overlay {
+                width: 11%;
+                height: 2.3%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card-button-overlay {
+                width: 110px;
+                height: 150px;
+                top: calc(29.5% + 10px);
+                left: 3%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 배경 이미지 -->
+        <img src="ele414douc1lass.jpg" alt="영어 3 교재" class="background-image">
+        
+        <!-- ZEP School 로고 버튼 (상단) -->
+        <div class="logo-button-overlay">
+            <button class="zep-button" onclick="goToMaterial()" aria-label="ZEP School Material">
+                <img src="wewewewee.png" alt="ZEP School Logo">
+            </button>
+        </div>
+        
+        <!-- 젭 스쿨 카드 버튼 (중앙) -->
+        <div class="card-button-overlay">
+            <button class="zep-button" onclick="goToZep()" aria-label="ZEP 스쿨로 이동">
+                <img src="12www.png" alt="ZEP 스쿨">
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // ZEP Material 페이지로 이동
+        function goToMaterial() {
+            window.location.href = 'https://zepschool.us/material/';
+        }
+
+        // ZEP 플레이 페이지로 이동
+        function goToZep() {
+            window.location.href = 'https://zep.us/play/pn5PzA';
+        }
+
+        // 페이지 로드 확인
+        window.addEventListener('load', function() {
+            console.log('ZEP 스쿨 페이지가 로드되었습니다.');
+        });
+    </script>
+</body>
+</html>
